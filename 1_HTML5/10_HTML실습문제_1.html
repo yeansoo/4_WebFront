@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_HTML 실습문제 1</title>
+</head>
+<body>
+    
+    <form action="#">
+        고객명 :  <input type="text"><br><br>
+        전화번호 :  <input type="tel"><br><br>
+        E-mail :  <input type="email"><br><br>
+        피자선택 : 
+        <select name="pizza_name">
+            <option value="cheese">치즈피자</option>
+            <option value="bacon">베이컨피자</option>
+            <option value="barbeque">바베큐피자</option>
+        </select>
+
+        <fieldset>
+            <input type="radio" name="pizza_size">Small<br>
+            <input type="radio" name="pizza_size">Medium<br>
+            <input type="radio" name="pizza_size">Large<br>
+        </fieldset>
+
+        <fieldset>
+            <legend>토핑 선택</legend>
+            <label for="bacon">베이컨</label> <input type="checkbox" name="topping" ><br>
+            <label for ="cheese">치즈</label> <input type="checkbox" name="topping" ><br>
+            <label for="onion">양파</label>  <input type="checkbox" name="topping" ><br>
+            <label for="mushroom">버섯</label>  <input type="checkbox" name="topping"><br>
+        </fieldset>
+        <br>
+        희망배송시간 : <input type="time"></input><br>
+        <br>
+        배송시 요청사항 : <textarea cols="10" rows="2"></textarea>
+        <br><br>
+        <button>주문하기</button>
+
+    </form>
+
+</body>
+</html>
