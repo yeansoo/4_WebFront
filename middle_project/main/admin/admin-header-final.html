@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
+
+    <style>
+
+      body{
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+#header>div{
+    width:1000px;
+    height:110px;
+    margin:auto; 
+
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+#header>div>a{
+    display: flex;
+    justify-content: center;
+}
+
+/* 헤더 오른쪽 상단 메뉴 */
+#header-top-menu{
+    display: inline;
+    position:relative;
+
+    right:-90%;
+    top:-90%;
+    
+}
+
+#header-top-menu a{
+    text-decoration: none;
+    color:black;
+    font-weight: 1px;
+    font-size: 12px;
+
+    margin:15px;
+}
+
+#media-menu{
+    
+    position:relative;
+    display: inline;
+    right:-70%;
+    top: -45%;
+
+}
+
+#media-menu>a{
+    text-decoration: none;
+    color:gray;
+    font-size: 14px;
+
+
+    border:1px solid gray;
+    padding : 3px 5px;
+}
+
+
+/********************* #nav-area **********************/
+#nav-area{
+   
+   height:60px;
+
+   border-bottom: 1px solid black;
+   border-top: 1px solid black;
+   background-color: rgba(255, 255, 255, 0.665);
+
+   /* 화면 밖으로 요소가 벗어났을 때 지정된 위치에 고정 */
+   position: sticky;
+   top:0px;
+   z-index:100; 
+}
+
+
+/* ul 스타일 지정 */
+/* 줄어들었을 때 좀 잘리게 하는거 어떻게하려나 */
+#nav-area>ul{
+   
+   /* 비율상 이부분 수정 */
+   /* width: 1200px; */ 
+   /* margin-left: 80px; */
+   justify-content: center;
+  
+   margin:0;
+
+   padding:0;
+   list-style: none;
+
+   display: flex;
+   height: 100%;
+
+}
+
+/* 네비게이터 메뉴 */
+#nav-area li{
+   flex-basis: 140px;
+   width: 140px;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+/* 메뉴 내부 a 태그 */
+#nav-area>ul>li>a{
+   cursor: pointer;
+
+   
+   text-decoration: none;
+   font-size: 15px;
+   color:black;
+
+   /* display: block; */
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   /* position: relative; */
+   /* 내부에 작성된 글자를 요소로 취급해서 정가운데 배치 */
+
+   /* border-radius: 5px; */
+   transition-duration: 0.1s;
+}
+
+
+#nav-area>ul>li>#book-btn{
+   text-decoration: none;
+   color:white;
+
+   border:1px solid black;
+   height: 100px;
+   width: 100px;
+
+   background-color: rgb(92, 91, 91);
+
+   position:absolute;
+
+   z-index: 20;
+
+   display: flex;
+   flex-direction: column;
+
+   justify-content: center;
+   align-items: center;
+   top:0;
+}
+
+#book-btn>i{
+    display: block;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+#header-top-btn{
+    position: fixed;
+    bottom: 0;
+    left:70%;
+
+    height:50px;
+    width: 50px;
+    background-color: rgb(81, 81, 81);
+
+    
+}
+
+#header-top-btn>a{
+    text-decoration: none;
+    color:white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#header-top-btn>a>i{
+    
+    font-size: 30px;
+}
+
+/* ***************** 여기까지 헤더 ***************** */
+    </style>
+
+
+</head>
+<body>
+    <div id="header">
+        <div id="header-top">
+            <a href="#"><img src="/img/logo.png"></a>
+
+             <!-- 우측 상단 로그인 예약조회 회원가입 -->
+            <!-- 헤더 오른쪽 상단 메뉴 -->
+            <div id="header-top-menu">
+                <a href="#">로그인</a>
+                |
+                <a>관리자 페이지</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="nav-area">
+        <ul>
+            <li><a href="#">객실 예약 관리</a></li>
+            <li><a href="#">미팅룸 예약 관리</a></li>
+            <li><a href="#">공지사항 관리</a></li>
+            <li><a href="#">프로모션 관리</a></li>
+            <li><a href="#">로그아웃</a></li>
+        </ul>
+
+       
+        <div id="header-top-btn">
+            <a href="#"><i class="fa-solid fa-arrow-up"></i>TOP</a>
+        </div>
+       
+    </div>
+    
+</body>
+</html>

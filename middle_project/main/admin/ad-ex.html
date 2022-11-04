@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+      body{
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+#header>div{
+    width:1000px;
+    height:110px;
+    margin:auto; 
+
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+#header>div>a{
+    display: flex;
+    justify-content: center;
+}
+
+/* 헤더 오른쪽 상단 메뉴 */
+#header-top-menu{
+    display: inline;
+    position:relative;
+
+    right:-90%;
+    top:-90%;
+    
+}
+
+#header-top-menu a{
+    text-decoration: none;
+    color:black;
+    font-weight: 1px;
+    font-size: 12px;
+
+    margin:15px;
+}
+
+#media-menu{
+    
+    position:relative;
+    display: inline;
+    right:-70%;
+    top: -45%;
+
+}
+
+#media-menu>a{
+    text-decoration: none;
+    color:gray;
+    font-size: 14px;
+
+
+    border:1px solid gray;
+    padding : 3px 5px;
+}
+
+
+/********************* #nav-area **********************/
+#nav-area{
+   
+   height:60px;
+
+   border-bottom: 1px solid black;
+   border-top: 1px solid black;
+   background-color: rgba(255, 255, 255, 0.665);
+
+   /* 화면 밖으로 요소가 벗어났을 때 지정된 위치에 고정 */
+   position: sticky;
+   top:0px;
+   z-index:100; 
+}
+
+
+/* ul 스타일 지정 */
+/* 줄어들었을 때 좀 잘리게 하는거 어떻게하려나 */
+#nav-area>ul{
+   
+   /* 비율상 이부분 수정 */
+   /* width: 1200px; */ 
+   /* margin-left: 80px; */
+   justify-content: center;
+  
+   margin:0;
+
+   padding:0;
+   list-style: none;
+
+   display: flex;
+   height: 100%;
+
+}
+
+/* 네비게이터 메뉴 */
+#nav-area li{
+   flex-basis: 140px;
+   width: 140px;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+/* 메뉴 내부 a 태그 */
+#nav-area>ul>li>a{
+   cursor: pointer;
+
+   
+   text-decoration: none;
+   font-size: 15px;
+   color:black;
+
+   /* display: block; */
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   /* position: relative; */
+   /* 내부에 작성된 글자를 요소로 취급해서 정가운데 배치 */
+
+   /* border-radius: 5px; */
+   transition-duration: 0.1s;
+}
+
+
+#nav-area>ul>li>#book-btn{
+   text-decoration: none;
+   color:white;
+
+   border:1px solid black;
+   height: 100px;
+   width: 100px;
+
+   background-color: rgb(92, 91, 91);
+
+   position:absolute;
+
+   z-index: 20;
+
+   display: flex;
+   flex-direction: column;
+
+   justify-content: center;
+   align-items: center;
+   top:0;
+}
+
+#book-btn>i{
+    display: block;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+#header-top-btn{
+    position: fixed;
+    bottom: 0;
+    left:70%;
+
+    height:50px;
+    width: 50px;
+    background-color: rgb(81, 81, 81);
+
+    
+}
+
+#header-top-btn>a{
+    text-decoration: none;
+    color:white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#header-top-btn>a>i{
+    
+    font-size: 30px;
+}
+
+/* ***************** 여기까지 헤더 ***************** */
+
+#search-book-table{
+        margin-top: 20px;
+       }
+       
+        #search-book-option{
+            border:1px solid black;
+        }
+
+
+
+        #search-book-title{
+            font-size: 30px;
+            margin-top: 20px;
+            margin-bottom:20px;
+        }
+        
+        #search-book-area{
+            width: 1000px;
+            margin:auto;
+        }
+
+        #search-book-table>div{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-book-no{
+            width: 50px;
+        }
+        .search-book-date{
+            width: 100px;
+        }
+        .search-book-reservation-no,.search-book-room-no,.search-book-party-num{
+            width: 100px;
+        }
+        .search-book-type{
+            width:50px;
+        }
+
+        .search-book-status-change{
+            width:50px;
+        }
+
+       
+        .search-book-status,.manage-booker-name{
+            width:100px;
+        }
+
+        #search-book-table-title{
+            border-top:2px solid black;
+            border-bottom:1px solid #bbb;
+            
+        }
+
+
+        #search-book-table-title>div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding:30px 0;
+        }
+
+        .search-book-table-content{
+            border-bottom:1px solid #bbb;
+        }
+
+        .search-book-table-content>div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding:10px 0;
+            height:30px;
+        }
+
+        .search-book-cost{
+            width: 100px;
+           justify-content: right;
+        }
+
+        .manage-border-right{
+            border-right: 1px solid #bbb;
+        }
+
+/* --------------------------------------------- */
+
+#search-book-option>span{
+    display: inline-block;
+}
+
+.search-option>select{
+    display: inline-block;
+    width: 90px;
+    margin: 20px 10px;
+    padding:5px;
+}
+
+.search-option:last-child{
+    text-align: right;
+}
+
+.search-option-input{
+    display: inline-block;
+    padding:5px;
+    width: 300px;
+}
+
+#search-date{
+    width:80px;
+    padding-right: 10px;
+}
+
+.search-date-input{
+    width: 350px;
+}
+
+.search-date-input>input{
+    display: inline-block;
+    padding:5px;
+}
+
+#search-book-option>button{
+    width: 70px;
+    height: 40px;
+}
+
+
+
+
+       /*----[ 페이지 이동 버튼 ]----*/
+
+       #rsc-page-skip{
+        margin-top:50px;
+       }
+#rsc-page-skip a{
+    text-decoration: none;
+    color: #767676;
+}
+#rsc-page-skip button{
+   background-color: #292526;
+   font-weight: bold;
+   font-size: 14px;
+   height: 38px;
+   width: 38px;
+}
+#rsc-page-skip button a{
+   font-weight: bold;
+   font-size: 14px;
+   color: #FFFFFF;
+}
+#rsc-page-skip button a:hover{
+   font-weight: bold;
+   font-size: 14px;
+   color: red;
+}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="header-top">
+            <a href="#"><img src="/img/logo.png"></a>
+
+             <!-- 우측 상단 로그인 예약조회 회원가입 -->
+            <!-- 헤더 오른쪽 상단 메뉴 -->
+            <div id="header-top-menu">
+                <a href="#">로그인</a>
+                |
+                <a>관리자 페이지</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="nav-area">
+        <ul>
+            <li><a href="#">객실 예약 관리</a></li>
+            <li><a href="#">미팅룸 예약 관리</a></li>
+            <li><a href="#">공지사항 관리</a></li>
+            <li><a href="#">프로모션 관리</a></li>
+            <li><a href="#">로그아웃</a></li>
+        </ul>
+
+       
+        <div id="header-top-btn">
+            <a href="#"><i class="fa-solid fa-arrow-up"></i>TOP</a>
+        </div>
+       
+    </div>
+    <div id="search-book-area">
+        <div id="search-book-title">예약 검색 페이지</div>
+    
+        <fieldset id="search-book-option">
+            <legend>검색 상세</legend>
+            
+            <span class="search-option">
+                <select name="search-option">
+                    <option value="">예약자명</option>
+                    <option value="">룸타입</option>
+                    <option value="">호수</option>
+                    <option value="">예약 상태</option>
+                    
+                </select>
+            </span>   
+            
+            <input type="text" class="search-option-input">
+    
+                
+            
+            <span id="search-date">
+                <div class="search-option">날짜 선택</div>
+            </span>
+            <span class="search-date-input">
+              <input type="date"> ~ <input type="date">
+            </span> 
+            <button>검색</button>
+    
+        </fieldset>
+        
+            <div id="search-book-table">
+    
+            <div id="search-book-table-title">
+                <div class="search-book-no">번호</div>
+                <div class="search-book-date">예약일</div>
+                <div class="search-book-reservation-no">예약번호</div>
+                <div class="search-book-room-no">호수</div>
+                <div class="search-book-party-num">인원</div>
+                <div class="search-book-type">룸타입</div>
+                <div class="search-book-date">체크인</div>
+                <div class="search-book-date">체크아웃</div>
+                <div class="search-book-cost">금액</div>
+                <div class="manage-booker-name">예약자명</div>
+                <div class="search-book-status">진행상태</div>
+            </div>
+    
+    
+            <div class="search-book-table-content">
+                <div class="search-book-no manage-border-right">1</div>
+                <div class="search-book-date manage-border-right">2022-10-13</div>
+                <div class="search-book-reservation-no manage-border-right">R12341234</div>
+                <div class="search-book-room-no manage-border-right">301</div>
+                <div class="search-book-party-num manage-border-right">3</div>
+                <div class="search-book-type manage-border-right">A</div>
+                <div class="search-book-date manage-border-right">2022-11-11</div>
+                <div class="search-book-date manage-border-right">2022-11-20</div>
+                <div class="search-book-cost manage-border-right">560,000</div>
+                <div class="manage-booker-name manage-border-right">홍길동</div>
+                <div class="search-book-status">예약완료</div>
+            </div>
+            <div class="search-book-table-content">
+                <div class="search-book-no manage-border-right">1</div>
+                <div class="search-book-date manage-border-right">2022-10-13</div>
+                <div class="search-book-reservation-no manage-border-right">R12341234</div>
+                <div class="search-book-room-no manage-border-right">301</div>
+                <div class="search-book-party-num manage-border-right">3</div>
+                <div class="search-book-type manage-border-right">A</div>
+                <div class="search-book-date manage-border-right">2022-11-11</div>
+                <div class="search-book-date manage-border-right">2022-11-20</div>
+                <div class="search-book-cost manage-border-right">560,000</div>
+                <div class="manage-booker-name manage-border-right">홍길동</div>
+                <div class="search-book-status">예약완료</div>
+            </div>
+            
+            <!-- 페이지 이동 버튼 -->
+            <div id="rsc-page-skip">
+                <a href="#"><<</a>&nbsp;&nbsp;
+                <a href="#">< </a> &nbsp;&nbsp;
+                <button><a href="#">1</a></button>&nbsp;&nbsp;
+                <a href="#">></a> &nbsp;&nbsp;
+                <a href="#">>></a>
+            <div>
+    
+            
+            </div>
+    </div>
+</body>
+</html>

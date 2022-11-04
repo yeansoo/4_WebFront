@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+
+        .reservation3-content{
+            width: 1000px;
+            margin:auto;
+        }
+
+        .reservation3-content>div{
+           /* display: inline-block; */
+        } 
+
+        .table{
+            width:700px;
+            /* display: flex;
+            flex-direction: row; */
+            /* margin:auto; */
+            border-top:2px solid black;
+           
+        }
+        .table>div{
+            display: inline-block;
+        }
+    
+        .date{
+            width:130px;
+        }
+
+        .contnet{
+            width: 550px;
+        }
+
+        .date-content{
+            height:454px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            border-right:1px solid rgb(202, 202, 202);
+            border-bottom:1px solid rgb(202, 202, 202);
+        }
+
+        .content-title{
+         
+            display:flex;
+        }
+
+        .content-inner{
+            display:flex;
+        }
+
+        .content-inner>div{
+            display: flex;
+            align-items: center;
+        }
+
+        .content-content{
+            padding:5px 10px ;
+            height: 80px;
+            width:325px;
+            border-bottom:1px solid rgb(202, 202, 202);
+        }
+
+        .content-price, .content-count{
+            width:100px;
+           
+            border-bottom:1px solid rgb(202, 202, 202);
+
+        }
+
+        .content-price{
+            justify-content: flex-end;
+            padding-right: 5px;
+            
+        }
+
+        .content-border{
+            border-left:1px solid rgb(202, 202, 202);
+            border-right:1px solid rgb(202, 202, 202);
+        }
+
+        .table-top{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom:1px solid rgb(202, 202, 202);
+            height:70px;
+        }
+
+        /* -------------------------------------------- */
+
+        .side-table{
+            width:300px;
+        }
+
+        .side-date{
+            background-color: rgb(231, 231, 231);
+            border-top:2px solid black;
+            border-bottom:1px solid rgb(202, 202, 202);
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="table">
+        <div class="date">
+            <div class="date-title table-top">날짜</div>
+            <div class="date-content">2022-11-02</div>
+        </div><div class="content">
+            <div class="content-title">
+                <div class="content-content table-top" style="padding:0 10px;">항목</div
+                ><div class="content-price table-top">금액</div
+                ><div class="content-count table-top">개수</div>
+            </div>
+            
+            <div class="content-inner">
+                <div class="content-content">1인 인원추가(48개월 이상)*기준인원(2인)외 투숙시 선택필수</div>
+                <div class="content-price content-border">22,000원</div>
+                <div class="content-count"></div>
+            </div>
+
+            <!-- <div class="content-inner">
+                <div class="content-content">1인 인원추가(48개월 미만)*기준인원(2인)외 투숙시 선택필수</div
+                ><div class="content-price content-border">0원</div
+                ><div class="content-count"></div>
+            </div>
+            <div class="content-inner">
+                <div class="content-content">성인2인조식(사전예약 20%할인가) + 소아1인 조식 무료/환불불가</div
+                ><div class="content-price content-border">65,600원</div
+                ><div class="content-count"></div>
+            </div>
+            <div class="content-inner">
+                <div class="content-content">성인1인조식(사전예약 20%할인가/환불불가)</div
+                ><div class="content-price content-border">32,800원</div
+                ><div class="content-count"></div>
+            </div>
+            <div class="content-inner">
+                <div class="content-content">소아1인조식(사전예약 20%할인가/환불불가)</div
+                ><div class="content-price content-border">17,600원</div
+                ><div class="content-count"></div>
+            </div> -->
+        </div>
+
+    </div>
+
+    <div class="side-table">
+        <div class="side-date">
+            일정
+        </div>
+        
+
+        <table>
+            <tr>
+                <td>체크인</td>
+                <td>2022-11-02 (수)</td>
+            </tr>
+            <tr>
+                <td>체크아웃</td>
+                <td>2022-11-03 (목)</td>
+            </tr>
+            <tr>
+                <td>박수</td>
+                <td>1박</td>
+            </tr>
+            <tr>
+                <td>객실수</td>
+                <td>1실</td>
+            </tr>
+            <tr>
+                <td>인원수</td>
+                <td>어른2 어린이0</td>
+            </tr>
+        </table>
+
+        <div class="rooms-pack">
+            <div class="rooms-pack-title">
+                객실&패키지
+            </div>
+            <div>
+                디럭스 더블 가든
+            </div>
+            <div>
+                <span>2022-11-02</span><span>230,000원(VAT별도)</span>
+            </div>
+            <div>
+                253,000원 (VAT포함)
+            </div>
+        </div>
+
+        <div class="option">
+            <div class="option-title">
+                객실&패키지
+            </div>
+            <div>
+               
+            </div>
+            <div>
+                0원 (VAT포함)
+            </div>
+        </div>
+
+        <div id="total-money">
+            253,000원 (VAT포함)
+        </div>
+
+    </div>
+
+
+
+
+</body>
+</html>
