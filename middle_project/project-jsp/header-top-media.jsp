@@ -1,70 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>미디어 라이브러리</title>
-    <style>
-
-        body{
-            margin:0;
-        }
-
-        #header-top-media-main{
-            width: 1000px;
-            margin:auto;
-        }
-
-         #top-photo{
-            background-color: antiquewhite;
-            height: 150px;
-        }
-
-        #top-menu{
-            color:rgb(133, 131, 131);
-            font-size:14px;
-            padding:20px 0;
-        }
-    
-        #top-menu>a{
-            text-decoration: none;
-            color:rgb(133, 131, 131);
-            padding:0 10px;
-        }
-
-
-        #info-title{
-            height: 10%;
-            font-family:'나눔명조';
-            font-size: 30px;
-            margin:20px 0;
-        }
-
-        
-
-        #media-youtube{
-            
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-
-            flex-wrap: wrap;
-           
-        }
-
-        .media-youtube-link{
-            margin: 10px 0;
-            height: 223px;
-            width: 320px;
-            background-color: black;
-        }
-
-
-    </style>
 </head>
 <body>
-    <div id="top-photo"></div>
+     <div id="top-photo"></div>
     <div id="header-top-media-main">
         <div id="top-menu">
             <a href="#">HOME</a>><a href="#">MEDIA LIBRARY</a>
@@ -89,7 +32,6 @@
             <div class="media-youtube-link"></div>
         </div>
     </div>
-
 
 </body>
 </html>

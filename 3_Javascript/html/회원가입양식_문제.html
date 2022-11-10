@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 가입 양식</title>
+    <style>
+        .btn-area {
+            text-align: right;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        fieldset {
+            width: 430px;
+        }
+
+        span {
+            font-size: 14px;
+        }
+
+        .confirm {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="main.html" method="POST" onsubmit="return validate(event);">
+        <fieldset>
+            <legend>회원 가입 양식</legend>
+
+            <table>
+                <tr>
+                    <td>아이디</td>
+                    <td>
+                        <input type="text" id="inputId">
+                    </td>
+                    <td>
+                        <button type="button" href="#">중복확인</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td>
+                        <input type="password" id="inputPw">
+                    </td>
+                    <td>
+                        <span id="pwMessage"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호확인</td>
+                    <td>
+                        <input type="password" id="inputPwConfirm">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td>
+                        <input type="text" id="inputName">
+                    </td>
+                    <td>
+                        <span id="nameMessage"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td>
+                        <label> 남 <input type="radio" name="gender" value="m"></label>
+                        <label> 여 <input type="radio" name="gender" value="f"></label>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>전화번호</td>
+                    <td>
+                        <input type="text" id="inputTel">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td>
+                        <input type="text" id="inputEmail">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="btn-area">
+                        <button type="reset">초기화</button>
+                        <button>회원가입</button>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+    <script>
+        //---------------- 아이디 ----------------
+        // const inputId=document.getElementById("inputId");
+        // change : 포커스를 잃었을 때 
+        document.getElementById("inputId").addEventListener("change",function(){
+            const reqId=/^[a-z][\w-_]{5,13}$/;
+
+            if(reqId.test(inputId.value)){
+                this.style.backgroundColor="springgreen";
+            }else{
+                this.style.backgroundColor="red";
+                this.style.color="white";
+            }
+        });
+
+        //---------------- 비밀번호 ----------------
+        const inputPw=document.getElementById("inputPw");
+        const inputPwConfirm=document.getElementById("inputPwConfirm");
+        const pwMessage=document.getElementById("pwMessage");
+
+        inputPw.addEventListener("keyup",function(){
+            if(inputPw.value.trim().length==0){
+                inputPwConfirm.value="";
+                alert("비밀번호를 입력해주세요");
+                inputPw.focus();
+            }else{
+                if(inputPw.value==inputPwConfirm.value){
+                    pwMessage.innerText="비밀번호 일치";
+                    pwMessage.style.color="green";
+                }else{
+                    pwMessage.innerText="비밀번호 불일치";
+                    pwMessage.style.color="red";
+                }
+            }
+        })
+
+        inputPwConfirm.addEventListener("keyup",function(){
+            if(inputPw.value==inputPwConfirm.value){
+                pwMessage.innerText="비밀번호 일치";
+                pwMessage.style.color="green";
+            }else{
+                pwMessage.innerText="비밀번호 불일치";
+                pwMessage.style.color="red";
+            }
+        })   
+
+
+        //---------------- 이름 ----------------
+        const nameMessage=document.getElementById("nameMessage");
+        document.getElementById("inputName").addEventListener("change",function(){
+            const reqName=/^[가-힣]{2,5}$/;
+
+            if(reqName.test(this.value)){
+                nameMessage.innerText="정상입력";
+                nameMessage.style.color="green";
+            }else{
+                nameMessage.innerText="한글만 입력하세요";
+                nameMessage.style.color="red";
+            }
+        })
+
+        //---------------- 회원가입 버튼 클릭시 ----------------
+        // form 태그에 onsubmit="return validate() 추가
+
+        const gender=document.getElementsByName("gender");
+        const inputTel=document.getElementById("inputTel");
+        const reqTel=/^[0][0-9]{1,2}-[0-9]{3,4}-[0-9]{4}/;
+
+        function validate(){
+ 
+            // //성별이 선택되었는지
+            // if(!gender[0].checked&&!gender[1].checked){
+            //     alert("성별을 선택해주세요.");
+            //     event.preventDefault();
+            //     return;
+            // }
+
+
+            if(!reqTel.test(inputTel.value)){
+                alert("전화번호의 형식이 올바르지 않습니다.");
+                event.preventDefault();
+                return false;
+            }
+            
+            const gender = document.querySelector("input[name='gender']:checked");
+            // 체크된 라이도 버튼만 얻어오기 
+
+            if(gender==null){
+                alert("성별을 선택해주세요.");
+                return false;
+            }
+
+            return true;
+
+        }
+
+    </script>
+</body>
+
+</html>
